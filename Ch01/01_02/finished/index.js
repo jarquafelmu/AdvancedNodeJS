@@ -5,10 +5,8 @@ var delay = (seconds) => new Promise((resolves, rejects) => {
     }, seconds * 1000);
 });
 
-function delay(seconds, callback) {
-    setTimeout(callback, seconds * 1000);
-}
-
-delay(1).then(console.log);
+delay(1)
+    .then(console.log)
+    .then(() => console.log(`hello world`));
 
 console.log('end first tick');
