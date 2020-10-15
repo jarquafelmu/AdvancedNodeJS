@@ -7,7 +7,7 @@ var delay = (seconds) => new Promise((resolves, rejects) => {
   }, seconds);
 });
 
-delay(1)
+delay(4)
   .then(console.log)
   .then(() => 42)
   .then((number) => console.log(`Hello world: ${number}`))
