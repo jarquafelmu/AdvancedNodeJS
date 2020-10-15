@@ -8,7 +8,8 @@ var delay = (seconds) => new Promise((resolves) => {
   setTimeout(resolves, seconds * 1000);
 })
 
-Promise.all([
+Promise.race([
+  // executes the then statement as soon as the first promise finishes
   delay(5),
   delay(2),
   delay(3),
