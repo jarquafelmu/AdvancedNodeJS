@@ -9,9 +9,9 @@ var delay = (seconds) => new Promise((resolves) => {
 })
 
 Promise.all([
-  unlink(`readme.md`),
-  unlink(`readme.txt`),
+  delay(5),
+  delay(2),
   delay(3),
-  unlink(`readme.json`)
+  delay(5),
 ]).then(() => readdir(__dirname))
   .then(console.log)
