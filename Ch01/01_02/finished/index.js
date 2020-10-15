@@ -7,6 +7,7 @@ var delay = (seconds) => new Promise((resolves, rejects) => {
 
 delay(1)
     .then(console.log)
-    .then(() => console.log(`hello world`));
+    .then(() => 42)
+    .then((number) => console.log(`hello world ${number}`));
 
 console.log('end first tick');
