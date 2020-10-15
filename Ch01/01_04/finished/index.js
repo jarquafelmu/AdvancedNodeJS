@@ -21,4 +21,4 @@ delay(4, (error, message) => {
 
 var promiseDelay = promisify(delay);
 
-promiseDelay(2).then(console.log).catch((error) => console.log(`error: ${error.message}`))
+promiseDelay(5).then(console.log).catch((error) => console.log(`error: ${error.message}`))
