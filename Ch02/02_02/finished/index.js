@@ -13,7 +13,7 @@ const peaks = [
 class StreamFromArray extends Readable {
 
     constructor(array) {
-        super();
+        super({ encoding: `utf8` }); // invokes the Readable constructor
         this.array = array;
         this.index = 0;
     }
