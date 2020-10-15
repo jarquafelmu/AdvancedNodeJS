@@ -10,6 +10,9 @@ var delay = (seconds) => new Promise((resolves) => {
     setTimeout(resolves, seconds * 1000)
 })
 
-readdir.then((files) => {
-    
-})
+async function start() {
+    var files = await readdir(__dirname)
+    console.log(files)
+}
+
+start();
