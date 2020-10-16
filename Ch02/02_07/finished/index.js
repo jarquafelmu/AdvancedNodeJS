@@ -24,7 +24,7 @@ class Throttle extends Duplex {
 }
 
 const report = new PassThrough();
-const throttle = new Throttle(10);
+const throttle = new Throttle(100);
 
 let total = 0;
 report.on(`data`, (chunk) => {
