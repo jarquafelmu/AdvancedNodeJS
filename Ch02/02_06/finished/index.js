@@ -6,3 +6,4 @@ process.stdin.pipe(writeStream)
 
 // console:
 // echo "Hello World" | node .
+// cat ../../sample.txt | node .
