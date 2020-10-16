@@ -1,7 +1,9 @@
 const { createReadStream, createWriteStream } = require('fs');
 
 const readStream = createReadStream('../../powder-day.mp4');
-const writeStream = createWriteStream('./copy.mp4');
+const writeStream = createWriteStream('./copy.mp4', {
+    highWaterMark: 162892088
+});
 
 readStream.on('data', (chunk) => {
     const result = writeStream.write(chunk);
