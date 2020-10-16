@@ -19,6 +19,6 @@ class ReplaceText extends Transform {
   }
 }
 
-let xStream = new ReplaceText('x');
+let xStream = new ReplaceText('XX');
 
 process.stdin.pipe(xStream).pipe(process.stdout)
