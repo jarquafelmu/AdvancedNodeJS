@@ -1,10 +1,9 @@
 {
   "name": "start",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
-    "multiparty": "^4.1.4"
+    "multiparty": "^4.2.2"
   },
   "devDependencies": {},
   "scripts": {
@@ -12,5 +11,6 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": ""
 }
