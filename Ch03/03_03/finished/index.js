@@ -1,5 +1,9 @@
-const { createServer } = require('http');
-const { stat, createReadStream } = require('fs');
+const { createServer, request } = require('http');
+const {
+  stat,
+  createReadStream,
+  createWriteStream
+} = require('fs');
 const { promisify } = require('util');
 const fileName = '../../powder-day.mp4';
 const fileInfo = promisify(stat);
@@ -28,17 +32,23 @@ const respondWithVideo = async (req, res) => {
 }
 
 createServer((req, res) => {
-  if (req.url === `/video`) {
+
+  if (req.method === `POST`) {
+    req.pipe(res);
+    req.pipe(process.stdout);
+    req.pipe(createWriteStream(`./upload.file`))
+  }
+  else if (req.url === `/video`) {
     respondWithVideo(req, res);
   } else {
     res.writeHead(200, { 'Content-Type': `text/html` })
     res.end(`
 
-    <form enctype="multipart/form-data" method="POST" action="/">
+    <form enctype="multipart/form-data" method="POST" action="/" accept-charset="utf-8">
       <input type="file" name="upload-file"/>
       <button>Upload File</button>
     </form>
 
-    `)
+    `, { 'encoding': `utf-8` })
   }
 }).listen(3000, () => console.log('server running - 3000'));
